@@ -1,0 +1,175 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 100vh;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 920px;
+  height: 95vh;
+  background: white;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #4361ee, #3a56d4);
+  color: white;
+  padding: 36px 20px;
+  text-align: center;
+}
+
+.header h1 { font-size: 38px; font-weight: 800; margin-bottom: 8px; }
+.header p { font-size: 16px; opacity: 0.95; }
+
+/* CHAT */
+.chat {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #f9fbfd;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* MENSAGENS */
+.message { max-width: 78%; align-self: flex-start; }
+.message.user { align-self: flex-end; }
+
+.bubble {
+  padding: 18px 26px;
+  border-radius: 26px;
+  font-size: 16.5px;
+  line-height: 1.7;
+  word-wrap: break-word;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+
+.message.user .bubble {
+  background: #4361ee;
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.message.bot .bubble {
+  background: white;
+  color: #1a1a1a;
+  border: 2px solid #e8e8e8;
+  border-bottom-left-radius: 6px;
+}
+
+/* INPUT AREA */
+.input-area {
+  padding: 24px 30px;
+  background: white;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.text-send-row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+/* Substitua o antigo input[type="text"] por .chat-input */
+.chat-input {
+  flex: 1;
+  padding: 18px 24px;
+  border: 3px solid #ddd;
+  border-radius: 20px;
+  font-size: 16.5px;
+  outline: none;
+  background: #fdfdff;
+  transition: all 0.3s;
+  width: 100%; /* Garante que o input tente ocupar espaço se o flex falhar */
+  min-width: 0; /* Truque de CSS para flexbox funcionar melhor com textos longos */
+}
+
+/* Substitua o antigo input[type="text"]:focus por .chat-input:focus */
+.chat-input:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 6px rgba(67, 97, 238, 0.22);
+}
+
+button {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 20px;
+  font-size: 16.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 10px 28px rgba(67, 97, 238, 0.45);
+}
+
+button:hover:not(:disabled) {
+  background: #3651d4;
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(67, 97, 238, 0.55);
+}
+
+button:disabled { background: #aaa; cursor: not-allowed; transform: none; }
+
+/* BOTÃO ANEXAR PDF EMBAIXO */
+.file-upload-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.file-label-bottom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4ff;
+  color: #4361ee;
+  padding: 16px 40px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 15.5px;
+  cursor: pointer;
+  border: 3.5px dashed #4361ee;
+  transition: all 0.4s ease;
+  min-width: 320px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(67, 97, 238, 0.3);
+}
+
+.file-label-bottom:hover {
+  background: #e1e8ff;
+  border-style: solid;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(67, 97, 238, 0.5);
+}
+
+input[type="file"] { position: absolute; left: -9999px; }
+
+/* SCROLLBAR */
+.chat::-webkit-scrollbar { width: 12px; }
+.chat::-webkit-scrollbar-track { background: transparent; }
+.chat::-webkit-scrollbar-thumb {
+  background: #c8d0ff;
+  border-radius: 10px;
+  border: 3px solid #f9fbfd;
+}
+.chat::-webkit-scrollbar-thumb:hover { background: #a8b8ff; }
