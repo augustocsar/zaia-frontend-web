@@ -10,8 +10,13 @@ export default defineConfig({
       '/chat': {
         target: 'http://127.0.0.1:8000',
         changeOrigin: true,
-        // SEM REWRITE → mantém /chat
       },
+      // --- ADICIONE ESTE BLOCO ABAIXO ---
+      '/upload-pdf': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+      },
+      // ----------------------------------
     },
   },
 })
