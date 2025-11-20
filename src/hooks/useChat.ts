@@ -1,4 +1,3 @@
-// src/hooks/useChat.ts
 import { useState } from 'react';
 import type { Message } from '../types';
 import { api } from '../services/api';
