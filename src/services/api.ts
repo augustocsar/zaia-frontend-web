@@ -1,4 +1,3 @@
-// src/services/api.ts
 const AUTH_HEADER = { 'Authorization': 'Basic ' + btoa('admin:1234') };
 
 export const api = {
