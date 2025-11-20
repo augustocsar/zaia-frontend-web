@@ -1,75 +1,65 @@
-# React + TypeScript + Vite
+# 🎨 Zaia Agent - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interface moderna de chat desenvolvida com **React**, **TypeScript** e **Vite**.
+O sistema oferece uma experiência fluida com suporte a respostas em tempo real (streaming), upload de documentos e autenticação mockada.
 
-Currently, two official plugins are available:
+## ✨ Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Chat Interativo:** Interface estilo mensageiro com bolhas de conversa.
+* **Streaming Real-time:** As respostas da IA aparecem letra por letra à medida que são geradas.
+* **Integração RAG:** Botão dedicado para upload e análise de PDFs.
+* **Segurança:** Tela de Login (Mock) para proteção de acesso.
+* **Design Responsivo:** Layout fluido e moderno com CSS puro.
 
-## React Compiler
+## 🛠️ Stack Tecnológica
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* **React 19**
+* **TypeScript**
+* **Vite** (Build tool ultra-rápida)
+* **CSS Modules**
 
-Note: This will impact Vite dev & build performances.
+## 📂 Estrutura do Projeto
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+frontend-zaia-agent/
+├── src/
+│   ├── components/   # Componentes visuais (Login, Chat, Input...)
+│   ├── hooks/        # Lógica de estado (useChat)
+│   ├── services/     # Comunicação com API (axios/fetch)
+│   ├── types/        # Tipagem TypeScript
+│   ├── App.tsx       # Componente Principal
+│   └── main.tsx      # Entrada do React
+├── public/           # Assets estáticos
+├── index.html        # HTML base
+├── vite.config.ts    # Configuração do Vite e Proxy
+└── package.json      # Dependências e scripts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Como Rodar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/augustocsar/zaia-frontend-web.git
+    cd backend-zaia-agent
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+3.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+
+3.  **I🔑 Acesso (Demo): Para testar a aplicação, utilize as credenciais de demonstração:**
+    ```bash
+    Usuário: admin
+    Senha: 1234
+    ```
+
+---
+**Desenvolvido por Augusto César**
+
+
